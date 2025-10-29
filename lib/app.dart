@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:qr_identity/theme/app_theme.dart';
 import 'package:qr_identity/widgets/bottom_nav_bar.dart';
@@ -20,6 +21,16 @@ class AppRoot extends StatelessWidget {
       title: 'QR Identity',
       theme: AppTheme.lightTheme,
       darkTheme: AppTheme.darkTheme,
+      localizationsDelegates: const [
+        GlobalMaterialLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate,
+        GlobalCupertinoLocalizations.delegate,
+      ],
+      supportedLocales: const [
+        Locale('fr'),
+        Locale('fr', 'FR'), // Français
+        Locale('en'),
+      ],
       home: const _StartupDecider(),
     );
   }
@@ -66,11 +77,7 @@ class _StartupDeciderState extends State<_StartupDecider> {
       body: _pages[_currentIndex],
       bottomNavigationBar: AnimatedBottomNavBar(
         currentIndex: _currentIndex,
-        onTap: (index) {
-          if (_profile != null || index == 0) {
-            setState(() => _currentIndex = index);
-          }
-        },
+        onTap: (index) => setState(() => _currentIndex = index),
       ),
     );
   }

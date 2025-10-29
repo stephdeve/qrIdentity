@@ -53,6 +53,8 @@ dependencies:
   animated_text_kit: ^4.3.0
   motion_toast: ^2.14.0
   lucide_icons: ^0.257.0
+  flutter_localizations:
+    sdk: flutter
 
 dev_dependencies:
   flutter_test:

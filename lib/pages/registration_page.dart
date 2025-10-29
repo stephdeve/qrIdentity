@@ -81,7 +81,6 @@ class _RegistrationPageState extends State<RegistrationPage> {
       lastDate: now,
       initialDate: DateTime(now.year - 18, now.month, now.day),
       helpText: 'Date de naissance',
-      locale: const Locale('fr'),
       builder: (context, child) => Theme(
         data: Theme.of(context).copyWith(
           colorScheme: ColorScheme.light(
